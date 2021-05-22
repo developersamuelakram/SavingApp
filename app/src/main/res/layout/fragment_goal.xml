@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".GoalFragment">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="8dp"
+        android:id="@+id/card"
+        android:layout_margin="3dp"
+        app:cardCornerRadius="5dp">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Goal Name"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_margin="6dp"
+            android:id="@+id/GoalInfo"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_height="match_parent">
+
+            <ProgressBar
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_centerHorizontal="true"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:indeterminate="false"
+                android:indeterminateDrawable="@drawable/circular_progress"
+                android:progress="100"
+                android:progressDrawable="@drawable/circular_progress"
+                android:id="@+id/pbGoal"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10%"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="120dp"
+                android:textSize="50sp"
+                android:id="@+id/goalprogress"
+                android:textColor="@color/black"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pbGoal"
+                android:gravity="center"
+                android:id="@+id/linear"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/Deposit"
+                android:layout_margin="10dp"
+                android:text="Deposit"/>
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/Withdraw"
+                android:layout_margin="10dp"
+                android:layout_toRightOf="@id/Deposit"
+                android:text="Withdraw"/>
+
+
+
+
+
+
+            </LinearLayout>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="toGo"
+                android:layout_below="@id/linear"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp"
+                android:textSize="17sp"
+                android:textColor="@color/black"
+                android:id="@+id/toGo"/>
+
+
+
+        </RelativeLayout>
+
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardElevation="8dp"
+        android:layout_below="@id/card"
+        android:layout_margin="3dp"
+
+        app:cardCornerRadius="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Transactions History"
+            android:id="@+id/heading"
+            android:layout_centerHorizontal="true"
+
+            android:layout_marginTop="4dp"
+            android:textSize="18sp"/>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:id="@+id/recViewTrans"
+            android:layout_below="@+id/heading"/>
+
+
+
+        </RelativeLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+    </RelativeLayout>

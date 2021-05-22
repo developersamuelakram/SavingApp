@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navgraph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.saverapp.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_allgoalsfragment"
+            app:destination="@id/allgoalsfragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/loginFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.saverapp.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/allgoalsfragment"
+        android:name="com.example.saverapp.Allgoalsfragment"
+        android:label="fragment_allgoalsfragment"
+        tools:layout="@layout/fragment_allgoalsfragment" >
+        <action
+            android:id="@+id/action_allgoalsfragment_to_goalFragment"
+            app:destination="@id/goalFragment" />
+        <action
+            android:id="@+id/action_allgoalsfragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/goalFragment"
+        android:name="com.example.saverapp.GoalFragment"
+        android:label="fragment_goal"
+        tools:layout="@layout/fragment_goal" >
+        <action
+            android:id="@+id/action_goalFragment_to_allgoalsfragment"
+            app:destination="@id/allgoalsfragment" />
+
+
+        <argument
+            android:name="Goalname"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="GoalAmount"
+            app:argType="string"
+            android:defaultValue="null" />
+
+        <argument
+            android:name="GoalId"
+            app:argType="string"
+            android:defaultValue="null" />
+    </fragment>
+</navigation>
